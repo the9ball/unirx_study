@@ -6,6 +6,8 @@ public interface IMovable
 	Vector3    position { get; }
 	Quaternion rotation { get; }
 
+	void Update();
+
 	void WarpTo( Vector3 to );
 	void MoveTo( Vector3 to );
 	void Move( Vector3 direction );
@@ -25,6 +27,11 @@ public class Character : ICharacter
 	public Character( IMovable moveEngine )
 	{
 		this.moveEngine = moveEngine;
+	}
+
+	public virtual void Update()
+	{
+		this.moveEngine.Update();
 	}
 }
 

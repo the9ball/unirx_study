@@ -14,5 +14,10 @@ public class CharacterManager
 			.Select( x => CharacterFactory.Create( x ) )
 			.ToList();
 	}
+
+	public void Update()
+	{
+		foreach ( var c in characterList ) c.Update();
+	}
 }
 
