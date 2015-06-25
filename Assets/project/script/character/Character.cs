@@ -11,7 +11,11 @@ public interface IMovable
 	void Move( Vector3 direction );
 }
 
-public class Character
+public interface ICharacter
+{
+}
+
+public class Character : ICharacter
 {
 	public Vector3    position { get { return moveEngine.position; } }
 	public Quaternion rotation { get { return moveEngine.rotation; } }
